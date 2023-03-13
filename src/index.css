@@ -1,0 +1,63 @@
+@import url(//db.onlinewebfonts.com/c/c446362802681bacaacbad0f39bfc1a5?family=Suisse+Intl+Medium);
+@import url(//db.onlinewebfonts.com/c/e956a479fdb7957b5e54aa49291bbc94?family=Zapf+Humanist+601);
+@font-face {font-family: "Suisse Intl Medium, Suisse Intl"; src: url("//db.onlinewebfonts.com/t/c446362802681bacaacbad0f39bfc1a5.eot");
+   src: url("//db.onlinewebfonts.com/t/c446362802681bacaacbad0f39bfc1a5.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c446362802681bacaacbad0f39bfc1a5.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c446362802681bacaacbad0f39bfc1a5.woff") format("woff"), url("//db.onlinewebfonts.com/t/c446362802681bacaacbad0f39bfc1a5.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c446362802681bacaacbad0f39bfc1a5.svg#Suisse Intl Medium") format("svg"); }
+@font-face {font-family: "Zapf Humanist 601"; src: url("//db.onlinewebfonts.com/t/e956a479fdb7957b5e54aa49291bbc94.eot"); src: url("//db.onlinewebfonts.com/t/e956a479fdb7957b5e54aa49291bbc94.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/e956a479fdb7957b5e54aa49291bbc94.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/e956a479fdb7957b5e54aa49291bbc94.woff") format("woff"), url("//db.onlinewebfonts.com/t/e956a479fdb7957b5e54aa49291bbc94.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/e956a479fdb7957b5e54aa49291bbc94.svg#Zapf Humanist 601") format("svg"); }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif, 'Suisse Intl Medium', 'Zapf Humanist 601';
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color:#fffef2 ;
+  color:"#333"
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  padding: unset;
+  margin: unset;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.dark{
+  color:white;
+  background-color: #232323;
+}
+
+.light{
+  color:#232323;
+  background-color:white;
+}

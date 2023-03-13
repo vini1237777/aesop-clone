@@ -1,0 +1,21 @@
+
+.button{
+    width:70px;
+    height:70px;
+    background-color: #333;
+    position: absolute;
+}
+
+.carouselProvider{
+    position:relative;
+}
+
+.button_back{
+    top: 50%;
+    transform: translateX(-50%);
+}
+
+.button_next{
+    top: 50%;
+    left: 100%;
+}
