@@ -1,5 +1,5 @@
 
-import { services } from '../../../config/texts/footerText/footerText';
+import { services } from '../footerText/footerText';
 import FooterSection from '../FooterSection';
 
 const Services = () => {

@@ -1,5 +1,5 @@
 import Section, { ISection } from "../../component/Section/Section";
-import { textEnum } from "../../styles/fontstyles";
+import { textEnum } from "../../hooks/useFonts";
 
 
 const rootStyle={
@@ -16,7 +16,7 @@ const FooterSection = (props:ISection) => {
       rootProps={{ component: "section" }}
       {...props}
       rootStyle={{ ...rootStyle }}
-      titleVariant={textEnum.sm2}
+      titleVariant={textEnum.sm5}
       listItemVariant={textEnum.xs2}
       listWrapperStyles={textStyles}
       titleStyle={textStyles}

@@ -6,11 +6,11 @@ export const fontFamily = {
 };
 
 
-export const fontSmallest = {
-  fontSize: "0.79rem",
+export const fontSmallest =(theme:any)=> {
+ return { fontSize: "0.78rem",
   lineHeight: 1.5,
   fontWeight: 400,
-  fontFamily: fontFamily.suisse_medium,
+  fontFamily: fontFamily.suisse_medium,}
 };
 export const fontSmall = {
   fontSize: "1.4rem",
@@ -18,14 +18,17 @@ export const fontSmall = {
   fontWeight: 700,
   fontFamily: fontFamily.suisse_regular,
 };
-export const fontLarge = {
-  fontSize: "1.6rem",
+export const fontLarge =(theme:any)=> {
+  return {fontSize: "1.39rem",
   lineHeight: 1.33,
   fontWeight: 400,
   letterSpacing:"0.025em",
   fontFamily: fontFamily.zapf_humanist,
- 
-};
+// [ theme.breakpoints.between(499,700)]: { fontSize:"1.39rem"}
+}
+}
+  
+
 export const fontMedium = {
   fontSize: "1.6rem",
   lineHeight: 1.7,
@@ -37,8 +40,8 @@ export const fontMedium = {
 export const textStyles = {
   sm: fontSmall,
   md: fontMedium,
-  lg: fontLarge,
-  xs: fontSmallest,
+  lg: (theme:any)=>fontLarge(theme),
+  xs: (theme:any)=>fontSmallest,
   sm2: {
     fontSize: "0.8rem",
     lineHeight: 2,
@@ -80,4 +83,5 @@ export enum textEnum {
   sm3 = "sm3",
   xl="xl",
   sm4 = "sm4",
+
 }

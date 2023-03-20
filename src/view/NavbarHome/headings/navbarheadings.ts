@@ -1,4 +1,4 @@
-export  const navbarHeadingsMain = [
+export const navbarHeadingsMain = [
   { key: 1, heading: "Skin Care" },
   { key: 2, heading: "Body & Hand" },
   { key: 3, heading: "Hair" },
@@ -10,20 +10,14 @@ export  const navbarHeadingsMain = [
   { key: 9, heading: "Stores" },
 ];
 
-export const navbarHeadings = [
-  { key: 1, heading: "Log in" },
-  { key: 2, heading: "Cart" },
+export const navbarHeadingsGeneral = [
+  { key: 1, heading: "Shop" },
+  { key: 2, heading: "Read" },
+  { key: 3, heading: "Stores" },
 ];
 
-
-
-
-
-
-
-
-
-
-
-
-
+export const navbarHeadings = [
+  { key: 1, heading: "Log in" },
+  { key: 2, heading: "Cabinet" },
+  { key: 3, heading: "Cart" },
+];

@@ -1,9 +1,10 @@
 
 .button{
-    width:70px;
-    height:70px;
+    width:60px;
+    height:60px;
     background-color: #333;
     position: absolute;
+
 }
 
 .carouselProvider{
@@ -11,11 +12,15 @@
 }
 
 .button_back{
-    top: 50%;
-    transform: translateX(-50%);
+  z-index: 60;
+    top: calc(50% - 80px);
+    left: 0;
+   
 }
 
 .button_next{
-    top: 50%;
-    left: 100%;
+   z-index: 60;
+    top: calc(50% - 80px);
+    right: 0;
+   
 }

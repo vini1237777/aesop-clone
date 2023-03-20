@@ -1,5 +1,5 @@
 
-import { socialMedia } from '../../../config/texts/footerText/footerText';
+import { socialMedia } from '../footerText/footerText';
 import FooterSection from '../FooterSection';
 
 const SocialMedia = () => {

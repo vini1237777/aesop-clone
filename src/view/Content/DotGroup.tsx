@@ -26,14 +26,6 @@ const DotGroup = ({
 }) => {
    
     const styles =(i:number)=>{
-        console.log(
-          currentSlide,
-          totalSlides,
-          currentSlide % totalSlides,
-          i,
-          (currentSlide % totalSlides)-1 === i,
-          "test"
-        );
        return (currentSlide % totalSlides)-1 === i? classes.selecteditem : classes.item
     }; 
   return (

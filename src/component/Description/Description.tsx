@@ -1,26 +1,30 @@
 import { ArrowForward } from '@mui/icons-material';
-import { Box, Button } from '@mui/material';
+import { Box, Button,useTheme } from '@mui/material';
+import { textEnum} from '../../hooks/useFonts';
 import { IObject } from '../../interface/interface';
 import { colors } from '../../styles/color';
-import {  textEnum } from '../../styles/fontstyles';
 import Text from '../Typography/Typography';
 
-const rootDefaultStyles={
-display:"flex",
-flexDirection:"column",
-alignItems: "flex-start",
-gap:"30px",
+const rootDefaultStyles =(theme:any)=> {
+return  { 
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+  gap: "1.87rem",
 }
+};
 
-const buttonRootStyles = {
-  paddingBottom: "19px",
+const buttonRootStyles =(theme:any) =>{
+ return { paddingBottom: "19px",
   paddingTop: "19px",
-  paddingRight: "23px",
-  paddingLeft: "23px",
   display: "flex",
   flexDirections: "column",
   gap: "1.5rem",
-  borderColor: 'rgba(51,51,51,.2)'
+  borderColor: "rgba(51,51,51,.2)",
+  justifyContent: "space-between",
+  alignItems: "center",
+  width: "100%",
+  [theme.breakpoints.up(639)]: { width: "300px" },}
 };
 
 const Description = ({
@@ -30,12 +34,14 @@ const Description = ({
   buttonLabel,
   buttonCustomStyle,
   buttonVariant,
-  sx = [],
+  sx=[],
   cutsomButtonTextStyle,
   titleStyle,
-  isSlide = true,
   textCommonStyle,
-  isBanner = false,
+  descriptionStyle=[],
+  subTitleStyle,
+  buttonDescriptionWrapper=[],
+  titleSubtitleWrapper=[],
 }: {
   title?: string;
   subTitle?: string;
@@ -46,53 +52,62 @@ const Description = ({
   sx?: IObject;
   cutsomButtonTextStyle?: IObject;
   titleStyle?: IObject;
-  isSlide?: boolean;
   textCommonStyle?: IObject;
-  isBanner?:boolean;
+  descriptionStyle?: IObject;
+  subTitleStyle?: IObject;
+  buttonDescriptionWrapper?: IObject;
+  titleSubtitleWrapper?: IObject;
 }) => {
+  const theme = useTheme();
   return (
-    <Box component={"article"} sx={{ ...rootDefaultStyles, ...sx }}>
-      {title && (
-        <Text
-          label={title}
-          variant={textEnum.xs}
-          sx={{ marginBottom: "-10px", ...titleStyle, ...textCommonStyle }}
-        />
-      )}
-      <Text
-        label={subTitle || ""}
-        variant={isBanner ?  textEnum.xl :textEnum.lg}
-        sx={{ ...textCommonStyle }}
-      />
-      <Text
-        label={description || ""}
-        variant={textEnum.sm3}
-        sx={{ ...textCommonStyle }}
-      />
-      {buttonLabel && (
-        <Button
-          variant={buttonVariant || "outlined"}
-          sx={{
-            textTransform: "none",
-            ...buttonRootStyles,
-            ...buttonCustomStyle,
-          }}
-          size="large"
-        >
+    <Box component={"article"} sx={{ ...rootDefaultStyles(theme), ...sx }}>
+      <Box sx={{ ...titleSubtitleWrapper }}>
+        {title && (
           <Text
-            label={buttonLabel || ""}
+            label={title}
             variant={textEnum.xs}
+            sx={{  ...titleStyle, ...textCommonStyle }}
+          />
+        )}
+        <Text
+          label={subTitle || ""}
+          variant={textEnum.lg}
+          sx={{ ...textCommonStyle, ...subTitleStyle }}
+        />
+      </Box>
+      <Box sx={{ ...buttonDescriptionWrapper }}>
+        <Text
+          label={description || ""}
+          variant={textEnum.sm3}
+          sx={{ ...textCommonStyle, ...descriptionStyle }}
+        />
+        {buttonLabel && (
+          <Button
+            variant={buttonVariant || "outlined"}
             sx={{
-              paddingRight: "55px",
-              ...cutsomButtonTextStyle,
-              ...textCommonStyle,
+              textTransform: "none",
+              ...buttonRootStyles(theme),
+              ...buttonCustomStyle,
             }}
-          />
-          <ArrowForward
-            sx={{ fontSize: "0.9rem", color: colors.black, ...textCommonStyle }}
-          />
-        </Button>
-      )}
+          >
+            <Text
+              label={buttonLabel || ""}
+              variant={textEnum.xs3}
+              sx={{
+                ...cutsomButtonTextStyle,
+                ...textCommonStyle,
+              }}
+            />
+            <ArrowForward
+              sx={{
+                fontSize: "0.9rem",
+                color: colors.black,
+                ...textCommonStyle,
+              }}
+            />
+          </Button>
+        )}
+      </Box>
     </Box>
   );
 };

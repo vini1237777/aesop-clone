@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { ListItem } from "../../classes";
+import { textEnum, textTypes } from "../../hooks/useFonts";
 import { IObject } from "../../interface/interface";
-import { textEnum, textTypes } from "../../styles/fontstyles";
 import Divider from "../Divider/Divider";
 import List from "../List/List";
 import Text from "../Typography/Typography";

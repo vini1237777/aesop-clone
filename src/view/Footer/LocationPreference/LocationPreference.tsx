@@ -1,4 +1,4 @@
-import { locationPreferences, } from '../../../config/texts/footerText/footerText';
+import { locationPreferences, } from '../footerText/footerText';
 import FooterSection from '../FooterSection';
 
 

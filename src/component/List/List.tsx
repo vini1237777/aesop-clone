@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 import { ListItem } from '../../classes';
+import { textEnum, textTypes } from '../../hooks/useFonts';
 import { Icon } from '../../icons/config';
 import { IObject } from '../../interface/interface';
-import { textEnum, textTypes } from '../../styles/fontstyles';
 import Text from '../Typography/Typography';
 
 const defaultStyles = {
@@ -38,14 +38,14 @@ const List = ({
           <Text
             label={item.value}
             key={item.key}
-            variant={item.variant || itemVariant || textEnum.xs}
+            variant={item.variant || itemVariant || textEnum.xs5}
             sx={{ ...sx, ...item.sx }}
           />
         ) : (
           <Box sx={{ ...IconTextWrapperStyles }} key={item.key}>
             <Text
               label={item.value}
-              variant={item.variant || itemVariant || textEnum.xs}
+              variant={item.variant || itemVariant || textEnum.xs5}
               sx={{ ...sx, ...item.sx }}
             />
             <Icon type={item.icon} />

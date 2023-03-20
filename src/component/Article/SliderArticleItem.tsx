@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { IObject } from "../../interface/interface";
 import Description from "../Description/Description";
 
@@ -18,16 +18,9 @@ const rootStyle = {
   justifyContent: "space-between",
   flexDirection: "column",
   height: "100%",
-  width: "440px",
 };
 
-const textStyle = {
-  marginBottom: "-30px",
-};
 
-const slideComponentStyle={
-  position:"absolute"
-}
 
 const SliderArticleItem = ({
   title,
@@ -38,7 +31,10 @@ const SliderArticleItem = ({
   buttonVariant,
   buttonCustomStyle,
   isSelected,
-  isSlide=true,
+  isSlide = true,
+  titleSubtitleWrapper,
+  buttonDescriptionWrapper,
+  descriptionStyle,
 }: {
   title?: string;
   subTitle?: string;
@@ -49,12 +45,17 @@ const SliderArticleItem = ({
   buttonCustomStyle?: IObject;
   cutsomButtonTextStyle?: IObject;
   isSelected: boolean;
-  isSlide?:boolean;
+  isSlide?: boolean;
+  titleSubtitleWrapper?: IObject;
+  buttonDescriptionWrapper?: IObject;
+  descriptionStyle?: IObject;
 }) => {
   const selectedStyle = isSelected ? selecteditem : item;
-  const wrapperStyle = isSlide ? rootStyle : slideComponentStyle;
+  const theme=useTheme();
+  const matches640 = useMediaQuery(theme.breakpoints.between(640,1025));
+  
   return (
-    <Box sx={{ ...wrapperStyle }}>
+    <Box sx={{ ...rootStyle, ...sx }}>
       <Description
         title={title}
         subTitle={subTitle}
@@ -63,11 +64,13 @@ const SliderArticleItem = ({
         buttonVariant={buttonVariant}
         buttonCustomStyle={buttonCustomStyle}
         cutsomButtonTextStyle={cutsomButtonTextStyle}
-        titleStyle={textStyle}
-        isSlide={isSlide}
+        titleSubtitleWrapper={!matches640 ? titleSubtitleWrapper:{}}
+        buttonDescriptionWrapper={!matches640 ?buttonDescriptionWrapper:{}}
+        sx={matches640 ?descriptionStyle:{}}
+        // sx={!matches640?}
       />
       {isSlide && (
-        <Box sx={{ width: "100%", height: "15px", ...selectedStyle }}></Box>
+        <Box sx={{ width: "100%", ...selectedStyle }}></Box>
       )}
     </Box>
   );

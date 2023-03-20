@@ -1,4 +1,4 @@
-import { orderAndSupport } from '../../../config/texts/footerText/footerText';
+import { orderAndSupport } from '../footerText/footerText';
 import FooterSection from '../FooterSection';
 
 const OrdersSupport = () => {

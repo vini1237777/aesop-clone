@@ -25,12 +25,12 @@ export class ListItem{
 export class ContentItem {
     title?:string;
     description:string;
-    imageSrc?:string;
+    imageSrc?:object;
 
   constructor(
     description:string,
     title?:string,
-    imageSrc?:string
+    imageSrc?:object
   ) {
     this.title=title;
     this.description=description;
@@ -38,17 +38,27 @@ export class ContentItem {
   }
 }
 
+export class LocatorInfoContentItem {
+  title?: string;
+  imageSrc?: object;
+
+  constructor( title?: string, imageSrc?: object) {
+    this.title = title;
+    this.imageSrc = imageSrc;
+  }
+}
+
 export class ArticleItem {
   description: string;
   title?: string;
-  imageSrc?: string;
-  subtitle?:string;
-  buttonLabel?:string;
+  imageSrc:  IObject;
+  subtitle?: string;
+  buttonLabel?: string;
   constructor(
     description: string,
     subtitle: string,
     buttonLabel: string,
-    imageSrc?: string,
+    imageSrc: IObject,
     title?: string
   ) {
     this.title = title;

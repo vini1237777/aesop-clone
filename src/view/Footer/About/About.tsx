@@ -1,4 +1,4 @@
-import { about} from '../../../config/texts/footerText/footerText';
+import { about} from '../footerText/footerText';
 import FooterSection from '../FooterSection';
 
 const About = () => {
