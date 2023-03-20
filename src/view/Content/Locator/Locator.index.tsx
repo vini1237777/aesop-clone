@@ -16,18 +16,17 @@ const styles = (type: string,isVertical:boolean,theme: any) => {
     root: {
       display: "flex",
       width: "100%",
-      flexDirection: "column",
-      gap:  isVertical ? "0":'2.8rem'
+      flexDirection: isVertical ? "column" : "row",
+      gap: isVertical ? "0" : "2.8rem",
     },
 
     descriptionWrapper: {
-      width: isVertical ? '100%': "33%" ,
+      width: isVertical ? "100%" : "33%",
       ...descriptionStyles,
     },
 
-    
     image: {
-      width:  "100%",
+      width: "100%",
       [`padding${type}`]: "1.25rem",
       [theme.breakpoints.up(649)]: { [`padding${type}`]: "12.5%" },
       [theme.breakpoints.up(1019)]: { [`padding${type}`]: "8.33%" },

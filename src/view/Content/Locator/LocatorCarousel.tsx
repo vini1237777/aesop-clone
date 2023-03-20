@@ -35,12 +35,12 @@ const LocatorCarousel = () => {
   const { currentSlide, handleSlideChange } = useCarousel();
 
   const theme = useTheme();
-  const matches1700 = useMediaQuery(theme.breakpoints.between(1025, 1699));
+  const matches1700 = useMediaQuery(theme.breakpoints.between(1025, 2000));
   const matches640 = useMediaQuery(theme.breakpoints.down(640));
   const matches711 = useMediaQuery(theme.breakpoints.between(640, 717));
 
   return matches1700 ? (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box sx={{ display: "flex", flexDirection: "row" }}>
       <>
         <Carousel
           visibleSlides={1}
